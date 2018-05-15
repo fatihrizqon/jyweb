@@ -3,7 +3,10 @@
     <div class="mui--appbar-height"></div>
     <br>
     <div class="mui--text-display3 row wow zoomInDown light-green-tea-txt" data-wow-duration="2s">
-      Amana Transport</div>
+      Sample.io
+    </div>
+    <br>
+    <p>Template Preview for Sample.io Green-Tea Company Web Profile</p>
     <br>
     <br>
     <a class="mui-btn green-tea-btn" href="<?php echo base_url().'order' ?>">Order</a>
@@ -17,36 +20,44 @@
 
 <section>
 <div class="mui-container-fluid dark-green-tea-txt">
-  <h2 align="center" class="fadeInDown">Green Tea - Amana Transport Web Company</h2>
+  <h2 align="center" class="fadeInDown">Green Tea Theme - Sample.io Web Company</h2>
   <br>
   <div class="mui-row mui-row-center" align="center">
-    <?php
-    $i = 0;
-    foreach ($main as $main) {
-      $i++;
-      if ($i%2==0) {
-    ?>
     <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
-      <img src="<?php echo base_url()."uploads/images/content/$main->images"?>">
-      <h3><?php echo $main->title; ?></h3>
+      <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+
+      <h3>Company Desc. I</h3>
       <p align="justify">
-        <?php echo $main->text;?>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#">Details</a>
       </p>
     </div>
-    <?php
-      }else{
-    ?>
-    <div class="mui-col-md-3 mui-box  wow fadeInDown zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
-      <img src="<?php echo base_url()."uploads/images/content/$main->images"?>">
-      <h3><?php echo $main->title; ?></h3>
+
+    <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+      <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+
+      <h3>Company Desc. II</h3>
       <p align="justify">
-        <?php echo $main->text;?>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#">Details</a>
       </p>
     </div>
-    <?php
-      }
-    }
-    ?>
+
+    <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+      <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+
+      <h3>Company Desc. III</h3>
+      <p align="justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#">Details</a>
+      </p>
+    </div>
+
+    <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+      <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+
+      <h3>Company Desc. IV</h3>
+      <p align="justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#">Details</a>
+      </p>
+    </div>
 
   </div>
 </div>
@@ -55,38 +66,66 @@
 
 <section>
   <div class="mui-container-fluid parallax dark-green-tea-txt mui--text-center">
-    <h2 align="center">Why MUICSS?</h2>
+    <h2 align="center">Why Sample.io?</h2>
     <div class="mui-row main-carousel">
       <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>Small Footprint</h3>
-        <p>MUI has a small download size to help pages load as quickly as possible</p>
+        <h3>Benefit I</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>Customizable</h3>
-        <p>The MUI CSS can be easily customized by using the SASS files available on GitHub and via Bower. Customize breakpoints, font-settings and use Material Design colors.</p>
+        <h3>Benefit II</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>No Dependencies</h3>
-        <p>MUI CSS/JS has no external dependencies</p>
-      </div>
-      <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>Package Layout</h3>
-        <p>The MUI package includes all the necessary code to use MUI components on the web and over email. In addition, we're working on React and WebComponents libraries to give developers more flexibility on the web.</p>
-      </div>
-      <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>Cross Platform</h3>
-        <p>The MUI project is committed to building a set of components that work across platforms from web to mobile to email to iOS to Android.</p>
-      </div>
-      <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>HTML Email</h3>
-        <p>To help with HTML emails, MUI includes an email CSS library that can be used with an inliner.</p>
-      </div>
-      <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
-        <h3>Acknowledgements</h3>
-        <p>MUI is heavily influenced by Bootstrap, Polymer, and Ink as well as some of the popular Material Design frameworks (Materialize, Material-Bootstrap, Material UI). To encourage developers to hack on MUI, the source code for MUI is open-source under an MIT license.</p>
+        <h3>Benefit III</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
   </div>
+</section>
+
+<section>
+<hr>
+<div class="mui-container-fluid green-tea-txt" align="center">
+<h2>Sample.io Service</h2>
+<div class="mui-row zoomIn" align="center">
+  <div class="mui-col-md-3 carousel-cell service-container-box zoom wow zoomIn"  data-wow-duration="2s">
+    <h3>Service I</h3>
+    <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6704-200.png" alt="" data-wow-duration="2s">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <div class="mui-col-md-3 carousel-cell service-container-box zoom wow zoomIn"  data-wow-duration="2s">
+    <h3>Service II</h3>
+    <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6704-200.png" alt="" data-wow-duration="2s">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <div class="mui-col-md-3 carousel-cell service-container-box zoom wow zoomIn"  data-wow-duration="2s">
+    <h3>Service III</h3>
+    <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6704-200.png" alt="" data-wow-duration="2s">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+    <h3>Service IV</h3>
+    <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6704-200.png" alt="" data-wow-duration="2s">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="mui-divider"></div>
+
+<section>
+<div class="mui-container-fluid green-tea-txt" align="center">
+  <h2>Blogs</h2>
+  <div class="mui-row">
+    <div class="mui-col-md-4">
+    </div>
+  </div>
+</div>
 </section>
 
 <section>
@@ -111,17 +150,5 @@
     <h4>Built on : Ubuntu 17.10 Artful Aardvark</h4>
   </div>
 </div>
-</div>
-</section>
-
-<div class="mui-divider"></div>
-
-<section>
-<div class="mui-container-fluid green-tea-txt" align="center">
-  <h2>Blogs</h2>
-  <div class="mui-row">
-    <div class="mui-col-md-4">
-    </div>
-  </div>
 </div>
 </section>

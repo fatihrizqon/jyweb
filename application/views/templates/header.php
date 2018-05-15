@@ -393,6 +393,24 @@ table .footMenu{
 	  border-radius: 10px;
 	  border-color: #33691E;
 	}
+  .service-container-box{
+    margin: 5px;
+    height: 100%;
+    width: 360px;
+    border: solid;
+    border-width: thin;
+    border-radius: 10px;
+    border-color: #DCEDC8;
+  }
+  .service-container-box:hover{
+    margin: 5px;
+    height: 100%;
+    width: 360px;
+    border: solid;
+    border-width: thin;
+    border-radius: 10px;
+    border-color: #33691E;
+  }
 	/******
 	 *Fonts
 	 ******/

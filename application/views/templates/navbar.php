@@ -3,7 +3,7 @@
       <div class="mui-container">
       <table>
         <tr class="mui--appbar-height">
-          <td class="mui--text-title super-light-green-tea-txt rubberBand anim wow fadeInUp">Amana Transport</td>
+          <td class="mui--text-title super-light-green-tea-txt rubberBand anim wow fadeInUp">Sample.io</td>
           <td class="mui--text-right appLink">
             <ul class="mui-list--inline mui--text-body2">
               <li class="super-light-green-tea-txt wow fadeInUp"><a href="#">About</a></li>
