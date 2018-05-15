@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JyWeb</title>
+    <!-- Load MUI -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.muicss.com/mui-0.9.36/extra/mui-colors.min.css">
+    <script src="//cdn.muicss.com/mui-0.9.36/extra/mui-combined.min.js"></script>
+    <link rel="shortcut icon" src="">
+    <!-- Quicksand Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
+    <!-- Custom CSS -->
+  </head>
+
+<style>
+/***************
+ * Common Config
+ ***************/
+img {
+    height: auto;
+}
+section{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.parallax {
+  /* The image used */
+  background-image: url("https://hdwallsource.com/img/2014/8/lime-green-wallpaper-21075-21611-hd-wallpapers.jpg");
+  /* Set a specific height */
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-size:12pt;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.material-icons{
+  font-size: 48pt;
+}
+
+/***************
+ *Text Animation
+ **************/
+ .anim {
+   animation-duration: 2.5s;
+   animation-fill-mode: both;
+   animation-iteration-count: infinite;
+ }
+ @keyframes bounce {
+   0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+   40% {transform: translateY(-30px);}
+   60% {transform: translateY(-15px);}
+ }
+ .bounce {
+   animation-name: bounce;
+ }
+ @keyframes flash {
+   0%, 50%, 100% {opacity: 1;}
+   25%, 75% {opacity: 0;}
+ }
+ .flash {
+   animation-name: flash;
+ }
+ @keyframes pulse {
+   0% {transform: scale(1);}
+   50% {transform: scale(1.1);}
+   100% {transform: scale(1);}
+ }
+ .pulse {
+   animation-name: pulse;
+   animation-duration: 1s;
+ }
+ @keyframes rubberBand {
+   0% {transform: scale(1);}
+   30% {transform: scaleX(1.25) scaleY(0.75);}
+   40% {transform: scaleX(0.75) scaleY(1.25);}
+   60% {transform: scaleX(1.15) scaleY(0.85);}
+   100% {transform: scale(1);}
+ }
+ .rubberBand {
+   animation-name: rubberBand;
+ }
+ @keyframes shake {
+   0%, 100% {transform: translateX(0);}
+   10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+   20%, 40%, 60%, 80% {transform: translateX(10px);}
+ }
+ .shake {
+   animation-name: shake;
+ }
+ @keyframes swing {
+   20% {transform: rotate(15deg);}
+   40% {transform: rotate(-10deg);}
+   60% {transform: rotate(5deg);}
+   80% {transform: rotate(-5deg);}
+   100% {transform: rotate(0deg);}
+ }
+ .swing {
+   transform-origin: top center;
+   animation-name: swing;
+ }
+ @keyframes wobble {
+   0% {transform: translateX(0%);}
+   15% {transform: translateX(-25%) rotate(-5deg);}
+   30% {transform: translateX(20%) rotate(3deg);}
+   45% {transform: translateX(-15%) rotate(-3deg);}
+   60% {transform: translateX(10%) rotate(2deg);}
+   75% {transform: translateX(-5%) rotate(-1deg);}
+   100% {transform: translateX(0%);}
+ }
+ .wobble {
+   animation-name: wobble;
+ }
+ @keyframes flip {
+   0% {transform: perspective(400px) translateZ(0) rotateY(0) scale(1);animation-timing-function: ease-out;}
+   40% {transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);animation-timing-function: ease-out;}
+   50% {transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);animation-timing-function: ease-in;}
+   80% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);animation-timing-function: ease-in;}
+   100% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);animation-timing-function: ease-in;}
+ }
+ .anim.flip {
+   backface-visibility: visible;
+   animation-name: flip;
+ }
+ @keyframes lightSpeedIn {
+   0% {transform: translateX(100%) skewX(-30deg);opacity: 0;}
+   60% {transform: translateX(-20%) skewX(30deg);opacity: 1;}
+   80% {transform: translateX(0%) skewX(-15deg);opacity: 1;}
+   100% {transform: translateX(0%) skewX(0deg);opacity: 1;}
+ }
+ .lightSpeedIn {
+   animation-name: lightSpeedIn;
+   animation-timing-function: ease-out;
+ }
+ @keyframes rollIn {
+   0% {opacity: 0;transform: translateX(-100%) rotate(-120deg);}
+   100% {opacity: 1;transform: translateX(0px) rotate(0deg);}
+ }
+ .rollIn {
+   animation-name: rollIn;
+ }
+ @keyframes rotateIn {
+   0% {transform-origin: center center;transform: rotate(-200deg);opacity: 0;}
+   100% {transform-origin: center center;transform: rotate(0);opacity: 1;}
+ }
+ .rotateIn {
+   animation-name: rotateIn;
+ }
+ @keyframes hinge {
+   0% {transform: rotate(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+   20%, 60% {transform: rotate(80deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+   40% {transform: rotate(60deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+   80% {transform: rotate(60deg) translateY(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+   100% {transform: translateY(700px);}
+ }
+ .hinge {
+   margin: 20px;
+   animation-name: hinge;
+ }
+/***************
+ *Zoom Animation
+ ***************/
+.zoom{
+  transition: transform 3s;
+}
+.zoom:hover {
+  transform: scale(0.95); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/************************
+ * Green Tea Color List
+ * Dark         : #8BC34A
+ * Normal       : #33691E
+ * Light        : #DCEDC8
+ * Super-Light  : #F1F8E9
+ ************************/
+.dark-green-tea-bg{
+  background-color: #33691E;
+}
+.dark-green-tea-txt{
+ color: #33691E;
+}
+.green-tea-bg{
+  background-color: #8BC34A;
+}
+.green-tea-txt{
+  color: #8BC34A;
+}
+.light-green-tea-bg{
+  background-color:#DCEDC8;
+}
+.light-green-tea-txt{
+  color:#DCEDC8;
+}
+.super-light-green-tea-bg{
+  background-color:#F1F8E9;
+}
+.super-light-green-tea-txt{
+  color:#F1F8E9;
+}
+
+/*************
+ *MUI CSS Edit
+ *************/
+.mui-row-center{
+  vertical-align: middle;
+}
+.mui-box{
+  margin-left: auto;
+  margin-right: auto;
+}
+.mui-container-box{
+  margin: 5px;
+  height: 250px;
+  width: 372px;
+  border: solid;
+  border-width: thin;
+  border-radius: 10px;
+  border-color: #DCEDC8;
+}
+.mui-container-box:hover{
+  margin: 5px;
+  height: 250px;
+  width: 372px;
+  border: solid;
+  border-width: thin;
+  border-radius: 10px;
+  border-color: #33691E;
+}
+/******
+ *Fonts
+ ******/
+@font-face {
+    font-family: Quicksand;
+    src: url(https://fonts.googleapis.com/css?family=Quicksand);
+}
+
+/*************
+ *MUI Settings
+ *************/
+body {
+  font-family: Quicksand;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+html,
+body,
+input,
+textarea,
+  buttons {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  }
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+header ul.mui-list--inline {
+  margin-bottom: 0;
+}
+header a {
+  color: #FFF;
+  text-decoration: none;
+}
+header a:hover {
+  color: #33691E;
+  text-decoration: none;
+  font-weight: bold;
+}
+header table {
+  width: 100%;
+}
+.appLink{
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 12pt;
+}
+.appLink:hover{
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+/**
+ * Content CSS     */
+#content-wrapper {
+  min-height: 100%;
+
+  /* sticky footer */
+  box-sizing: border-box;
+  margin-bottom: -100px;
+  padding-bottom: 100px;
+}
+/**
+ * Footer CSS
+ */
+footer {
+  box-sizing: border-box;
+  height: auto;
+  background-color: #DCEDC8;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+footer a:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+<body class="super-light-green-tea-bg">
+
+
+  <header class="mui-appbar mui--z1 green-tea-bg">
+    <div class="mui-container">
+      <table>
+        <tr class="mui--appbar-height">
+          <td class="mui--text-title rubberBand anim">Jylo.id</td>
+          <td class="mui--text-right">
+            <ul class="mui-list--inline mui--text-body2">
+              <li class="appLink super-light-green-tea-txt"><a href="#">About</a></li>
+              <li class="appLink super-light-green-tea-txt"><a href="#">Blog</a></li>
+              <li class="appLink super-light-green-tea-txt"><a href="#">Product</a></li>
+              <li class="appLink super-light-green-tea-txt"><a href="#">Contact</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </header>
+
+
+  <div class="mui--text-center">
+    <div class="mui--appbar-height"></div>
+    <br>
+    <div class="mui--text-display3 row wow zoomInDown" style="color:#7CB342;" data-wow-duration="2s">
+      Jylo.id</div>
+    <br>
+    <br>
+    <button class="mui-btn green-tea-btn">Get started</button>
+    <br>
+    <br>
+    <img class="mui--text-display3 zoom row wow fadeInLeft" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+  </div>
+  <br><br>
+  <div class="mui-divider"></div>
+  <section>
+  <div class="mui-container-fluid dark-green-tea-txt">
+    <h2 align="center">Slim Microframework</h2>
+    <div class="mui-row mui-row-center" align="center">
+      <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+        <h3>HTTP Router</h3>
+        <img src="https://www.freewebmentor.com/wp-content/uploads/2015/12/slim-logo.png" alt="" width="200px" height="200" style="border-radius: 50%;">
+        <p align="justify">
+          Slim provides a fast and powerful router that maps route callbacks to specific HTTP request methods and URIs. It supports parameters and pattern matching.
+        </p>
+      </div>
+      <div class="mui-col-md-3 mui-box  wow fadeInDown zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+        <h3>Middleware</h3>
+        <img src="https://www.freewebmentor.com/wp-content/uploads/2015/12/slim-logo.png" alt="" width="200px" height="200" style="border-radius: 50%;">
+        <p align="justify">
+          Build your application with concentric middleware to tweak the HTTP request and response objects around your Slim app.
+        </p>
+      </div>
+      <div class="mui-col-md-3 mui-box  wow fadeInUp zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+        <h3>PSR-7 Support</h3>
+        <img src="https://www.freewebmentor.com/wp-content/uploads/2015/12/slim-logo.png" alt="" width="200px" height="200" style="border-radius: 50%;">
+        <p align="justify">
+          Slim supports any PSR-7 HTTP message implementation so you may inspect and manipulate HTTP message method, status, URI, headers, cookies, and body.
+        </p>
+      </div>
+      <div class="mui-col-md-3 mui-box  wow fadeInDown zoom" align="center"  data-wow-duration="2s" data-wow-delay="0.3s">
+        <h3>Dependency Injection</h3>
+        <img src="https://www.freewebmentor.com/wp-content/uploads/2015/12/slim-logo.png" alt="" width="200px" height="200" style="border-radius: 50%;">
+        <p align="justify">
+          Slim supports dependency injection so you have complete control of your external tools. Use any Container-Interop container.
+        </p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+  <section>
+    <div class="mui-container-fluid parallax dark-green-tea-txt mui--text-center">
+      <h2 align="center">Why MUICSS?</h2>
+      <div class="mui-row main-carousel">
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>Small Footprint</h3>
+          <p>MUI has a small download size to help pages load as quickly as possible</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>Customizable</h3>
+          <p>The MUI CSS can be easily customized by using the SASS files available on GitHub and via Bower. Customize breakpoints, font-settings and use Material Design colors.</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>No Dependencies</h3>
+          <p>MUI CSS/JS has no external dependencies</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>Package Layout</h3>
+          <p>The MUI package includes all the necessary code to use MUI components on the web and over email. In addition, we're working on React and WebComponents libraries to give developers more flexibility on the web.</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>Cross Platform</h3>
+          <p>The MUI project is committed to building a set of components that work across platforms from web to mobile to email to iOS to Android.</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>HTML Email</h3>
+          <p>To help with HTML emails, MUI includes an email CSS library that can be used with an inliner.</p>
+        </div>
+        <div class="mui-col-md-3 carousel-cell mui-container-box zoom wow zoomIn"  data-wow-duration="2s">
+          <h3>Acknowledgements</h3>
+          <p>MUI is heavily influenced by Bootstrap, Polymer, and Ink as well as some of the popular Material Design frameworks (Materialize, Material-Bootstrap, Material UI). To encourage developers to hack on MUI, the source code for MUI is open-source under an MIT license.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section>
+<hr>
+<div class="mui-container-fluid green-tea-txt" align="center">
+  <h2>What we use?</h2>
+  <div class="mui-row zoomIn">
+    <div class="mui-col-md-3 zoom wow fadeInUp">
+      <h1><i class="material-icons green-tea-txt">developer_mode</i></h1>
+      <h4>Engine : PHP Version 7.0.22</h4>
+    </div>
+    <div class="mui-col-md-3 zoom wow fadeInDown">
+      <h1><i class="material-icons green-tea-txt">storage</i></h1>
+      <h4>Database : MySQL Version 14.14</h4>
+    </div>
+    <div class="mui-col-md-3 zoom wow fadeInUp">
+      <h1><i class="material-icons green-tea-txt">language</i></h1>
+      <h4>Web Server : Apache/2.4.27</h4>
+    </div>
+    <div class="mui-col-md-3 zoom wow fadeInDown">
+      <h1><i class="material-icons green-tea-txt">computer</i></h1>
+      <h4>Built on : Ubuntu 17.10 Artful Aardvark</h4>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="mui-divider"></div>
+
+<section>
+  <div class="mui--text-center green-tea-txt">
+    <img class="mui--text-display3 anim pulse" aria-hidden="true" src="https://www.slimframework.com/assets/images/favicon.png" alt="" data-wow-duration="2s">
+    <h1>Jylo.id</h1>
+  </div>
+</section>
+
+<div class="mui-divider"></div>
+
+<section>
+  <div class="mui-container-fluid green-tea-txt" align="center">
+    <h2>Blogs</h2>
+    <div class="mui-row">
+      <div class="mui-col-md-4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+  new WOW().init();
+</script>
+
+<script>
+$('.main-carousel').flickity({
+  cellAlign: 'left',
+  contain: true,
+  autoPlay: true,
+  autoPlay: 4000,
+  wrapAround: true
+});
+</script>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made by <b><a class="dark-green-tea-txt" href="http://instagram.com/fatihrizqon">Me</a></b> with ♥ for You
+  </div>
+  <div class="mui-divider"></div>
+  <div class="container" align="center">
+    <p class="dark-green-tea-txt" style="font-size:11pt;">  Instagram | Google+ | Facebook | Github | YouTube</p>
+  </div>
+</footer>
+</body>
+</html>
