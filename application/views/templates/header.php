@@ -46,7 +46,22 @@
 	  margin-top: 25px;
 	  margin-bottom: 25px;
 	}
-	.parallax {
+
+	.promo-parallax {
+	  /* The image used */
+	  background-image: url("https://i.pinimg.com/originals/33/3c/db/333cdb6d24a6a2ac07460e8d299c5e5b.jpg");
+	  /* Set a specific height */
+	  height: auto;
+	  padding-top: 20px;
+	  padding-bottom: 50px;
+	  font-size:12pt;
+	  /* Create the parallax scrolling effect */
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.benefit-parallax {
 	  /* The image used */
 	  background-image: url("https://hdwallsource.com/img/2014/8/lime-green-wallpaper-21075-21611-hd-wallpapers.jpg");
 	  /* Set a specific height */
@@ -129,6 +144,28 @@ table .footMenu{
     bottom: 0;
     position: fixed;
   }
+  /*Reserved*/
+  .service-container-box{
+    height: 100%;
+    border: solid;
+    border-width: thin;
+    border-radius: 10px;
+    border-color: #DCEDC8;
+    overflow:auto;
+  }
+  .service-container-box:hover{
+    height: 100%;
+    border: solid;
+    border-width: thin;
+    border-radius: 10px;
+    border-color: #33691E;
+    overflow:auto;
+  }
+}
+
+.profile-image{
+  width: 150px;
+  height: auto;
 }
 
 .nav{
@@ -393,24 +430,23 @@ table .footMenu{
 	  border-radius: 10px;
 	  border-color: #33691E;
 	}
-  .service-container-box{
-    margin: 5px;
-    height: 100%;
-    width: 360px;
+  .center-items{
+    display: block;
+    justify-content: center;
+  }
+  .service-container{
     border: solid;
     border-width: thin;
     border-radius: 10px;
     border-color: #DCEDC8;
   }
-  .service-container-box:hover{
-    margin: 5px;
-    height: 100%;
-    width: 360px;
+  .service-container:hover{
     border: solid;
     border-width: thin;
     border-radius: 10px;
     border-color: #33691E;
   }
+
 	/******
 	 *Fonts
 	 ******/

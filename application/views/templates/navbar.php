@@ -17,7 +17,7 @@
     </div>
     </nav>
 </header>
-<div id="menuBottom" class="footMenu container" align="center">
+<!-- <div id="menuBottom" class="footMenu container" align="center">
   <table align="center">
     <tr class="dark-green-tea-txt">
       <td><a class="footLink green-tea-txt  wow fadeInUp" href="#">About</a></td>
@@ -26,6 +26,5 @@
       <td><a class="footLink green-tea-txt  wow fadeInUp" href="#">Contact</a></td>
       <td><a href="#"><i class="material-icons green-tea-txt">more_vert</i></a></td>
     </tr>
-
   </table>
-</div>
+</div> -->

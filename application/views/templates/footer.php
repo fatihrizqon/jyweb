@@ -1,6 +1,6 @@
 <footer>
   <div class="mui-container mui--text-center">
-    Made by <b><a class="dark-green-tea-txt" href="http://instagram.com/fatihrizqon">Me</a></b> with ♥ for You
+    Made by <b><a class="dark-green-tea-txt" href="http://instagram.com/fatihrizqon">Me</a></b> with ♥ for Her
   </div>
   <div class="mui-divider"></div>
   <div class="container" align="center">
