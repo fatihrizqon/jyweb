@@ -23,10 +23,11 @@ class Admin_model extends CI_Model {
     $data = array(
       'title'     => $this->input->post('title'),
       'text'      => $this->input->post('text'),
-      'image'     => $image['file_name']
-    ); 
-    die("hard model");
-    // return $this->db->insert('main_content', $data);
+      'images'     => $image['file_name']
+      // Changed to Image later
+    );
+    // var_dump($image);
+    return $this->db->insert('main_content', $data);
   }
 
   public function viewNews($slug = FALSE)
@@ -61,7 +62,7 @@ class Admin_model extends CI_Model {
       'image'     => $image['file_name'],
       'id_users'  => $this->session->userdata('id'),
       'slug'      => $slug
-    ); 
+    );
     return $this->db->insert('news', $data);
   }
 
@@ -84,4 +85,3 @@ class Admin_model extends CI_Model {
   }
 
 }
-

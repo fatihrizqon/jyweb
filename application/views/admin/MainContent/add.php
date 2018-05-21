@@ -12,9 +12,9 @@
 	    		<textarea name="text"></textarea>
 	    		<br>
 	    		<label>Image</label>
-	    		<input type="file" name="image">
+	    		<input type="file" name="userfile">
 	    		<br>
-	    		<input type="submit" name="submit" value="Add New Content"/>
+	    		<input type="submit" value="Add New Content"/>
 	    	</form>
     	</div>
     	<div class="mdl-cell mdl-cell--2-col"></div>

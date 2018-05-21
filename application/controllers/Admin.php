@@ -26,10 +26,10 @@ class Admin extends CI_Controller {
   }
 
   public function login()
-  {    
+  {
   	if($this->session->userdata('status') == "login")
     {
-      redirect('admin/index'); 
+      redirect('admin/index');
     }
     $data['title'] = "Login";
     $this->load->view('admin/templates/header',$data);
@@ -51,7 +51,7 @@ class Admin extends CI_Controller {
     $data['login'] = $this->session->userdata();
     $data['news']  = $this->admin_model->getNews();
     $data['json'] = json_encode($this->admin_model->getNews());
-    
+
   	$this->load->view('admin/templates/header',$data);
   	$this->load->view('admin/templates/navbar',$data);
   	$this->load->view('admin/news',$data);
@@ -88,8 +88,8 @@ class Admin extends CI_Controller {
 	$imagename 			     = "image_".time();
 	$config['upload_path'] 	 = './uploads/images/news';
 	$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|svg';
-	$config['max_size'] 	 = '9000'; 
-	$config['max_width']  	 = '9000'; 
+	$config['max_size'] 	 = '9000';
+	$config['max_width']  	 = '9000';
 	$config['max_height']  	 = '9000';
 	$config['file_name']	 = $imagename;
  	$config['overwrite']	 = TRUE;
@@ -102,7 +102,7 @@ class Admin extends CI_Controller {
         {
 			$image = $this->upload->data();
 			if ($this->form_validation->run() === FALSE)
-		 	{	
+		 	{
 		 		redirect('admin/ucp', 'refresh');
 		 	}
 		 	else
@@ -111,7 +111,7 @@ class Admin extends CI_Controller {
 				redirect('admin/news', 'refresh');
 		 	}
         }
-		
+
         else
         {
         	redirect('admin');
@@ -164,10 +164,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/templates/footer');
 	}
 	public function addMainContentPage(){
-  		is_login();
-    	$data['title'] = "Setting Section";
-    	$data['login'] = $this->session->userdata();
-  		$data['main'] = $this->admin_model->getMainContent();
+  	is_login();
+    $data['title'] = "Setting Section";
+    $data['login'] = $this->session->userdata();
+  	$data['main'] = $this->admin_model->getMainContent();
 		$this->load->view('admin/templates/header',$data);
 		$this->load->view('admin/templates/navbar',$data);
 		$this->load->view('admin/MainContent/add');
@@ -178,48 +178,36 @@ class Admin extends CI_Controller {
 		is_login();
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->load->library('upload');
-		// $this->form_validation->set_rules("title", "title", 'required');
-		// $this->form_validation->set_rules("text", "text", 'required');
-
-    	$data['login'] = $this->session->userdata();
-    	$id_users = $this->session->userdata('id_users');
-
-		$imagename 			     = "image_".time();
+		$this->form_validation->set_rules("title", "title", 'required');
+		$this->form_validation->set_rules("text", "text", 'required');
+    $data['login'] = $this->session->userdata();
+    $id_users = $this->session->userdata('id_users');
+		$imagename 			         = "image_".time();
 		$config['upload_path'] 	 = './uploads/images/content';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|svg';
-		$config['max_size'] 	 = '2048'; 
-		$config['max_width']  	 = '2048'; 
-		$config['max_height']  	 = '2048';
-		$config['file_name']	 = $imagename;
- 		$config['overwrite']	 = TRUE;
-    	$this->upload->initialize($config);
-    	if($_FILES)
-    	{
-			if ($this->upload->do_upload('image')){
-				$image = $this->upload->data();
-				if ($this->form_validation->run() === FALSE)
-		 		{	
-			 		die("Failed");
-		 		}
-			 	else
-			 	{
-			 		die("Success");
-					// $this->admin_model->addNews();
-					// redirect('admin/news', 'refresh');
-			 	}
-        	}
-	        else{
-	        	die("Error");
-    			// redirect('admin/mainContent', 'refresh');
-	        }
-    	}else{
-    		die("Image Not Selected.");
-    		// redirect('admin/mainContent', 'refresh');
-    	}
-
+		$config['max_size'] 	   = '10000';
+		$config['max_width']  	 = '10000';
+		$config['max_height']  	 = '10000';
+		$config['file_name']	   = $imagename;
+ 		$config['overwrite']	   = TRUE;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
+    if($_FILES){
+      if ( ! $this->upload->do_upload())
+      {
+        $error = array('error' => $this->upload->display_errors());
+        var_dump($error);
+      }
+      else
+      {
+        $this->admin_model->addMainContent();
+      }
+    }else{
+      die("Image Not Selected.");
+      // redirect('admin/mainContent', 'refresh');
     }
-	
+  }
+
 
 	public function editMainContentPage(){
   		is_login();
