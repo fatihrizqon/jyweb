@@ -31,7 +31,7 @@
       <a class="mdl-navigation__link" href="<?php echo base_url()."admin/article" ?>"><i class="material-icons dark-color">description</i> Article</a>
       <a class="mdl-navigation__link" href="<?php echo base_url()."admin/portfolio" ?>"><i class="material-icons dark-color">folder</i> Portfolio</a>
       <a class="mdl-navigation__link" href="<?php echo base_url()."admin/gallery" ?>"><i class="material-icons dark-color">photo</i> Gallery</a>
-      <a class="mdl-navigation__link" href="<?php echo base_url()."admin/setting" ?>"><i class="material-icons dark-color">build</i> Setting</a><hr>
+      <a class="mdl-navigation__link" href="<?php echo base_url()."admin/mainContent" ?>"><i class="material-icons dark-color">build</i> Main Content</a><hr>
       <a class="mdl-navigation__link" href="<?php echo base_url()."admin/ucp" ?>"><i class="material-icons dark-color">people</i> User Control Panel</a>
     </nav>
   </div>

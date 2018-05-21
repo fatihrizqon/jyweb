@@ -152,7 +152,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/templates/footer');
 	}
 
-	public function setting()
+	public function mainContent()
 	{
   		is_login();
     	$data['title'] = "Setting Section";
@@ -160,7 +160,75 @@ class Admin extends CI_Controller {
   		$data['main'] = $this->admin_model->getMainContent();
 		$this->load->view('admin/templates/header',$data);
 		$this->load->view('admin/templates/navbar',$data);
-		$this->load->view('admin/setting');
+		$this->load->view('admin/mainContent');
+		$this->load->view('admin/templates/footer');
+	}
+	public function addMainContentPage(){
+  		is_login();
+    	$data['title'] = "Setting Section";
+    	$data['login'] = $this->session->userdata();
+  		$data['main'] = $this->admin_model->getMainContent();
+		$this->load->view('admin/templates/header',$data);
+		$this->load->view('admin/templates/navbar',$data);
+		$this->load->view('admin/MainContent/add');
+		$this->load->view('admin/templates/footer');
+	}
+
+	public function addMainContent(){
+		is_login();
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('upload');
+		// $this->form_validation->set_rules("title", "title", 'required');
+		// $this->form_validation->set_rules("text", "text", 'required');
+
+    	$data['login'] = $this->session->userdata();
+    	$id_users = $this->session->userdata('id_users');
+
+		$imagename 			     = "image_".time();
+		$config['upload_path'] 	 = './uploads/images/content';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|svg';
+		$config['max_size'] 	 = '2048'; 
+		$config['max_width']  	 = '2048'; 
+		$config['max_height']  	 = '2048';
+		$config['file_name']	 = $imagename;
+ 		$config['overwrite']	 = TRUE;
+    	$this->upload->initialize($config);
+    	if($_FILES)
+    	{
+			if ($this->upload->do_upload('image')){
+				$image = $this->upload->data();
+				if ($this->form_validation->run() === FALSE)
+		 		{	
+			 		die("Failed");
+		 		}
+			 	else
+			 	{
+			 		die("Success");
+					// $this->admin_model->addNews();
+					// redirect('admin/news', 'refresh');
+			 	}
+        	}
+	        else{
+	        	die("Error");
+    			// redirect('admin/mainContent', 'refresh');
+	        }
+    	}else{
+    		die("Image Not Selected.");
+    		// redirect('admin/mainContent', 'refresh');
+    	}
+
+    }
+	
+
+	public function editMainContentPage(){
+  		is_login();
+    	$data['title'] = "Setting Section";
+    	$data['login'] = $this->session->userdata();
+  		$data['main'] = $this->admin_model->getMainContent();
+		$this->load->view('admin/templates/header',$data);
+		$this->load->view('admin/templates/navbar',$data);
+		$this->load->view('admin/MainContent/edit');
 		$this->load->view('admin/templates/footer');
 	}
 

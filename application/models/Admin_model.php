@@ -17,6 +17,18 @@ class Admin_model extends CI_Model {
     return $query->result();
   }
 
+  public function addMainContent(){
+    $image = $this->upload->data();
+    // $slug = url_title($this->input->post('title'), 'dash', TRUE);
+    $data = array(
+      'title'     => $this->input->post('title'),
+      'text'      => $this->input->post('text'),
+      'image'     => $image['file_name']
+    ); 
+    die("hard model");
+    // return $this->db->insert('main_content', $data);
+  }
+
   public function viewNews($slug = FALSE)
   {
     if ($slug === FALSE)

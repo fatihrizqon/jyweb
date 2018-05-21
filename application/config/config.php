@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // 'http://localhost/myApp/'
 // "http://".$_SERVER['HTTP_HOST'];
-$config['base_url'] = 'http://192.168.100.18/jyweb/';
+$config['base_url'] = 'http://192.168.43.195/jyweb/';
 $config['index_page'] = '';
 $config['uri_protocol']	= 'REQUEST_URI';
 $config['url_suffix'] = '';

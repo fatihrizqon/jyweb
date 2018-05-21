@@ -165,7 +165,7 @@
 <section>
 <div class="mui-container-fluid green-tea-txt" align="center">
   <h2>Blogs</h2>
-  <div class="mui-row">
+  <div class="mui-row mui--text-justify">
     <div class="mui-col-md-4">
       <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/article-blog-blogging-feed-news-newspaper-press-30ea12b984c47aea-512x512.png" alt="" width="50%" height="auto">
       <h4>Blog I</h4>

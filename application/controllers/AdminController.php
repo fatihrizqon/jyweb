@@ -152,7 +152,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/templates/footer');
 	}
 
-	public function setting()
+	public function mainContent()
 	{
   		is_login();
     	$data['title'] = "Setting Section";
@@ -160,7 +160,7 @@ class Admin extends CI_Controller {
   		$data['main'] = $this->admin_model->getMainContent();
 		$this->load->view('admin/templates/header',$data);
 		$this->load->view('admin/templates/navbar',$data);
-		$this->load->view('admin/setting');
+		$this->load->view('admin/mainContent');
 		$this->load->view('admin/templates/footer');
 	}
 

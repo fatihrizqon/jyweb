@@ -35,6 +35,8 @@
   <script src="<?php echo base_url()."assets/js/dataTables.material.min.js"; ?>"></script>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets/css/material.min.css"; ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets/css/dataTables.material.min.css"; ?>">
+
+  
 </head>
 <!-- Uses a transparent header that draws on top of the layout's background -->
 <style>
